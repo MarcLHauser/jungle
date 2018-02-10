@@ -1,6 +1,5 @@
-### jungle
-##### book by Upton Sinclair
-##### game by Sammy H.
+### the jungle
+##### B	ook by Upton Sinclair. Game by Sammy H.
 
 create the first object  
 
