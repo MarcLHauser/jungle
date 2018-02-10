@@ -16,11 +16,12 @@ data.lithuania.no = data.freeze;
 var place = data.lithuania;
 
 var ask = function() {
-	if (place.question) {
-		return place.question;
-	} else {
-		return place.death;
-	}
+    if (place.question) {
+        return place.question;
+    } else {
+        console.error(place.death);
+        return 'Game Over';
+    }
 };
 
 var yes = function(){
