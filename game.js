@@ -6,4 +6,12 @@ var ask = function() {
     return lithuania.question;
 };
 
+var yes = function(){
+    return ask();
+};
+
+var no = function(){
+    return ask();
+};
+
 console.log( ask() );
