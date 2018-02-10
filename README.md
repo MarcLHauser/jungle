@@ -1,5 +1,5 @@
 ### the jungle
-##### B	ook by Upton Sinclair. Game by Sammy H.
+##### Game by Sammy H, based on the book by Upton Sinclair.
 
 create the first object  
 
