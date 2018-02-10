@@ -12,3 +12,5 @@ link 2 objects together
 point place to next 'yes' question
 
 create a death object
+
+link 'no' objects together

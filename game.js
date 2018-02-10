@@ -10,7 +10,8 @@ freeze = {
     death: "You have frozen to death because of Lithuania's cold climate."
 };
 
-lithuania.yes = america;
+lithuania.yes 	= america;
+lithuania.no 	= freeze;
 
 var place = lithuania;
 
@@ -19,11 +20,12 @@ var ask = function() {
 };
 
 var yes = function(){
-	place = place.yes;
+    place = place.yes;
     return ask();
 };
 
 var no = function(){
+    place = place.no;
     return ask();
 };
 
