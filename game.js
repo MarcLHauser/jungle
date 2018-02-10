@@ -19,7 +19,8 @@ var ask = function() {
 	if (place.question) {
 		return place.question;
 	} else {
-		return place.death;
+		console.error(place.death);
+		return 'Game Over';
 	}
 };
 
