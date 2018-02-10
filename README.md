@@ -1,7 +1,7 @@
 ### the jungle
 ##### Game by Sammy H, based on the book by Upton Sinclair.
 
-Thanks to [John Larsen](http://www.room51.co.uk/) for [assistance](https://forums.manning.com/posts/list/42695.page).  His [book](https://www.manning.com/books/get-programming-with-javascript) is excellent.
+Thanks to [John Larsen](http://www.room51.co.uk/) for his [assistance](https://forums.manning.com/posts/list/42695.page).  His [book](https://www.manning.com/books/get-programming-with-javascript) is excellent.
 
 create the first object  
 
