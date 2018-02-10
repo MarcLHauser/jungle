@@ -66,25 +66,25 @@ data.chicago.no      = data.wandering;
 data.stockyards.yes  = data.boardinghouse;
 data.stockyards.no   = data.streets;
 
-var place = data.lithuania;
-
-var ask = function() {
-	if (place.question) {
-		return place.question;
-	} else {
-		console.error(place.death);
-		return 'Game Over';
-	}
+var getMessage = function() {
+    if (place.question) {
+        return place.question;
+    } else {
+        console.error(place.death);
+        return 'Game Over';
+    }
 };
 
 var yes = function(){
-    place = place.yes;
-    return ask();
+	place = place.yes;
+    return getMessage();
 };
 
 var no = function(){
-    place = place.no;
-    return ask();
+	place = place.no;
+    return getMessage();
 };
 
-console.log( ask() );
+// start game
+var place = data.lithuania;
+console.log( getMessage() );
