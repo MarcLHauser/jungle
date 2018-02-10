@@ -9,18 +9,18 @@ var data = {
 
 data.lithuania.yes = data.america;
 
-var place = data.lithuania;
-
-var ask = function() {
-    return place.question;
+var getMessage = function() {
+    return data.lithuania.question;
 };
 
 var yes = function(){
-    return ask();
+    return getMessage();
 };
 
 var no = function(){
-    return ask();
+    return getMessage();
 };
 
-console.log( ask() );
+// start game
+var place = data.lithuania;
+console.log( getMessage() );
