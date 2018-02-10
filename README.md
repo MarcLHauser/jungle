@@ -8,3 +8,5 @@ and the initial ask() function
 create 2nd object 
 
 link 2 objects together
+
+point place to next 'yes' question

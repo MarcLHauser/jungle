@@ -15,6 +15,7 @@ var ask = function() {
 };
 
 var yes = function(){
+	place = place.yes;
     return ask();
 };
 
