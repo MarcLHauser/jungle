@@ -4,16 +4,17 @@ var data = {
     }
 };
 
-var ask = function() {
+var getMessage = function() {
     return data.lithuania.question;
 };
 
 var yes = function(){
-    return ask();
+    return getMessage();
 };
 
 var no = function(){
-    return ask();
+    return getMessage();
 };
 
-console.log( ask() );
+// start game
+console.log( getMessage() );
