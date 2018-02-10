@@ -6,6 +6,10 @@ america = {
     question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?"
 };
 
+freeze = {
+    death: "You have frozen to death because of Lithuania's cold climate."
+};
+
 lithuania.yes = america;
 
 var place = lithuania;

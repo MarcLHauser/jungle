@@ -10,3 +10,5 @@ create 2nd object
 link 2 objects together
 
 point place to next 'yes' question
+
+create a death object
