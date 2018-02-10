@@ -1,6 +1,8 @@
 ### the jungle
 ##### Game by Sammy H, based on the book by Upton Sinclair.
 
+[I'm an inline-style link](https://www.google.com)
+
 create the first object  
 
 and the initial ask() function 
@@ -19,4 +21,6 @@ ask method shows question or cause of death
 
 show 'Game Over'
 
-add data!
+add data
+
+Wrap the program in an Immediately Invoked Function Expression (IIFE)

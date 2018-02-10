@@ -1,90 +1,95 @@
-var data = {
-    lithuania : {
-        question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
-        yes: "america"
-    },
+(function () {
 
-    america : {
-        question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?"
-    },
+    var data = {
+        lithuania : {
+            question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
+            yes: "america"
+        },
 
-    freeze : {
-        death: "You have frozen to death because of Lithuania's cold climate."
-    },
+        america : {
+            question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?"
+        },
 
-    alleyway : {
-        death: "You decide to sleep in an abandoned alleyway and find all your money gone in the morning. You starve to death because no one will give you a job."
-    },
+        freeze : {
+            death: "You have frozen to death because of Lithuania's cold climate."
+        },
 
-    hotel : {
-        question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?"
-    },
+        alleyway : {
+            death: "You decide to sleep in an abandoned alleyway and find all your money gone in the morning. You starve to death because no one will give you a job."
+        },
 
-    newyork : {
-        question: "You stay in New York. Do you want to stay in a tenement?"
-    },
+        hotel : {
+            question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?"
+        },
 
-    tuberculosis : {
-        death: "You get tuberculosis after a few days in the tenement. It is fatal."
-    },
+        newyork : {
+            question: "You stay in New York. Do you want to stay in a tenement?"
+        },
 
-    homeless : {
-        death: "You are homeless and you can't find work. You starve."
-    },
+        tuberculosis : {
+            death: "You get tuberculosis after a few days in the tenement. It is fatal."
+        },
 
-    chicago : {
-        question: "You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want to go to the stockyards?"
-    },
+        homeless : {
+            death: "You are homeless and you can't find work. You starve."
+        },
 
-    wandering : {
-        death: "You starve wandering Chicago."
-    },
+        chicago : {
+            question: "You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want to go to the stockyards?"
+        },
 
-    stockyards : {
-        question: "You arrive in the stockyards. Coincidencetally, you run into your friend who owns a bodega. He gives a recommendation for a boardinghouse. Do you stay there?"
-    },
+        wandering : {
+            death: "You starve wandering Chicago."
+        },
 
-    streets : {
-        death:  "You quickly realize that the whole family cannot sleep in the streets. You find a tenement building to stay in for very little money, but it is very small and cramped. You get sick, because of the cramped consitions, and the disease is fatal."
-    },
+        stockyards : {
+            question: "You arrive in the stockyards. Coincidencetally, you run into your friend who owns a bodega. He gives a recommendation for a boardinghouse. Do you stay there?"
+        },
 
-    boardinghouse : {
-        question: "More questions to come..."
-    }
-};
+        streets : {
+            death:  "You quickly realize that the whole family cannot sleep in the streets. You find a tenement building to stay in for very little money, but it is very small and cramped. You get sick, because of the cramped consitions, and the disease is fatal."
+        },
 
-data.lithuania.yes   = data.america;
-data.lithuania.no    = data.freeze;
-data.america.yes     = data.hotel;
-data.america.no      = data.alleyway;
-data.hotel.yes       = data.chicago;
-data.hotel.no        = data.newyork;
-data.newyork.yes     = data.tuberculosis;
-data.newyork.no      = data.homeless;
-data.chicago.yes     = data.stockyards;
-data.chicago.no      = data.wandering;
-data.stockyards.yes  = data.boardinghouse;
-data.stockyards.no   = data.streets;
+        boardinghouse : {
+            question: "More questions to come..."
+        }
+    };
 
-var place = data.lithuania;
+    data.lithuania.yes   = data.america;
+    data.lithuania.no    = data.freeze;
+    data.america.yes     = data.hotel;
+    data.america.no      = data.alleyway;
+    data.hotel.yes       = data.chicago;
+    data.hotel.no        = data.newyork;
+    data.newyork.yes     = data.tuberculosis;
+    data.newyork.no      = data.homeless;
+    data.chicago.yes     = data.stockyards;
+    data.chicago.no      = data.wandering;
+    data.stockyards.yes  = data.boardinghouse;
+    data.stockyards.no   = data.streets;
 
-var ask = function() {
-    if (place.question) {
-        return place.question;
-    } else {
-        console.error(place.death);
-        return "Game Over";
-    }
-};
+    var getMessage = function() {
+        if (place.question) {
+            return place.question;
+        } else {
+            console.error(place.death);
+            return "Game Over";
+        }
+    };
 
-var yes = function(){
-    place = place.yes;
-    return ask();
-};
+    // assign global variables
+    window.yes = function(){
+        place = place.yes;
+        return getMessage();
+    };
 
-var no = function(){
-    place = place.no;
-    return ask();
-};
+    window.no = function(){
+        place = place.no;
+        return getMessage();
+    };
 
-console.log( ask() );
+    // start game
+    var place = data.lithuania;
+    console.log( getMessage() );
+
+})();
