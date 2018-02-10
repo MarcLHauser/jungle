@@ -16,7 +16,11 @@ lithuania.no 	= freeze;
 var place = lithuania;
 
 var ask = function() {
-    return place.question;
+	if (place.question) {
+		return place.question;
+	} else {
+		return place.death;
+	}
 };
 
 var yes = function(){

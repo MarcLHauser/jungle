@@ -14,3 +14,5 @@ point place to next 'yes' question
 create a death object
 
 link 'no' objects together
+
+ask method shows question or cause of death
