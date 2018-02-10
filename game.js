@@ -13,9 +13,7 @@ var data = {
 data.lithuania.yes = data.america;
 data.lithuania.no = data.freeze;
 
-var place = data.lithuania;
-
-var ask = function() {
+var getMessage = function() {
     if (place.question) {
         return place.question;
     } else {
@@ -25,13 +23,15 @@ var ask = function() {
 };
 
 var yes = function(){
-    place = place.yes;
-    return ask();
+	place = place.yes;
+    return getMessage();
 };
 
 var no = function(){
-    place = place.no;
-    return ask();
+	place = place.no;
+    return getMessage();
 };
 
-console.log( ask() );
+// start game
+var place = data.lithuania;
+console.log( getMessage() );
