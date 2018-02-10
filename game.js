@@ -4,8 +4,9 @@ var data = {
     }
 };
 
-var ask = function() {
+var getMessage = function() {
     return data.lithuania.question;
 };
 
-console.log( ask() );
+// start game
+console.log( getMessage() );
