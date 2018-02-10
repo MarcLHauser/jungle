@@ -1,5 +1,5 @@
 ### the jungle
-##### Game by Marc H & Sammy H (based on the book by Upton Sinclair).
+##### Game by Sammy H (based on the book by Upton Sinclair).
 ##### Thanks to [John Larsen](http://www.room51.co.uk/) for his assistance.  His [book](https://www.manning.com/books/get-programming-with-javascript) is excellent.
 
 create the first object  
