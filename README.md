@@ -18,3 +18,5 @@ link 'no' objects together
 ask method shows question or cause of death
 
 show 'Game Over'
+
+Add many more place objects to the data object
