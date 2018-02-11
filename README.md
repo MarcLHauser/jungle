@@ -1,22 +1,4 @@
 ### the jungle
 ##### Game by Sammy H, based on the book by Upton Sinclair.
 
-create the first object  
-
-and the initial ask() function 
-
-create 2nd object 
-
-link 2 objects together
-
-point place to next 'yes' question
-
-create a death object
-
-link 'no' objects together
-
-ask method shows question or cause of death
-
-show 'Game Over'
-
-Add many more place objects to the data object
+This branch adds all of the story data that Sammy has written, so far.
