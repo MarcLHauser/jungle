@@ -1,94 +1,122 @@
-(function () {
+/*
 
-    var data = {
-        lithuania : {
-            question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'"
-        },
+Author: Sammy Hauser
+Project: BSI Humanities The Jungle Final Project
 
-        america : {
-            question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?"
-        },
+Thanks to Marc Hauser (my dad) for teaching me, and John R. Larsen (author of Get Programming With JavaScript) for giving me feedback.
 
-        freeze : {
-            death: "You have frozen to death because of Lithuania's cold climate."
-        },
+*/
 
-        alleyway : {
-            death: "You decide to sleep in an abandoned alleyway and find all your money gone in the morning. You starve to death because no one will give you a job."
-        },
+var data = {
 
-        hotel : {
-            question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?"
-        },
+america: {
+    question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. She wants to go to America with you and her family, which includes Teta Elzbieta, Marija, Jonas, Antanas and six children. Do you a) stay in Lithuania, or b) go to America?",
+},
+    
+hotel: {
+    question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you a) sleep in the streets, or b) follow the man to the hotel?"
+},
+    
+freeze: {
+    death: "You freeze to death because of Lithuania's cold climate."
+},
 
-        newyork : {
-            question: "You stay in New York. Do you want to stay in a tenement?"
-        },
+chicago: {
+  question: "The man makes you pay an enormous sum of money to get out. But then, you remember that someone you know had gotten rich in Chicago. Do you a) to go to Chicago, or b) stay in New York?"  
+},
+    
+alleyway: {
+    death: "You decide to sleep in a seemingly abandoned alleyway. You wake up to find your money gone. Because of this, you cannot find anywhere to stay, and you die of disease after eating something off the street."
+},
+    
+stockyards: {
+    question: "You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want a) stay where you are, or b) got to the stockyards?"
+},
+    
+tenement: {
+    question: "You stay in New York. Do you want to a) stay in a tenement, or b) find somewhere else?"
+},
+    
+newYorkHomeless:{
+    death: "You take shelter in any place you can. One night, you decide to sleep in the police station, but you get killed in a fight, over the limited amount of space."
+},
+    
+tuberculosis: {
+    death: "Sickness travels quickly in the cramped tenement. You get pneumonia and die."
+},
+    
+boardinghouse: {
+    question: "You arrive in the stockyards. Coincidencetally, you run into your friend, Jokubas Szedvilas, who owns a delicatessen. He gives a recommendation for a boardinghouse. Do you a) ignore his recommendation, or b) stay in the boardinghouse?"
+},
+    
+wanderChicago: {
+    death: "You starve wandering Chicago."
+},
+    
+job: {
+    question: "You find out that Jokubas knows an 'special policeman' whose job it is to find other people jobs. Do you a) meet with him to find a job, or b) remain unemployed?"
+},
+    
+houseNoJob: {
+    question: "You realize that you have to find a place to stay, and you saw an advertisement for a house while walking with Ona. Do you a) ignore the ad, or b) to buy the house?"
+},
 
-        tuberculosis : {
-            death: "You get tuberculosis after a few days in the tenement. It is fatal."
-        },
+moneyOut: {
+    death: "You start renting a small house, but you cannot keep up with the payments. You are evicted, and soon, you starve to death."
+},
+    
+noHouse: {
+    death: "You die of dehydration while walking around the stockyards with Ona."
+},
+    
+lazybones: {
+    death: "Because no one is working, the family has no income, and you run out of money and die."
+},
+    
+house: {
+    question: "You now work at Brown's, sweeping up entrails into a hole in the floor, making 17 and a half cents an hour. Marija and Jonas also work. Do you want to a) buy a house, or b) stay in the boardinghouse?"
+}
+    
+};
 
-        homeless : {
-            death: "You are homeless and you can't find work. You starve."
-        },
+data.america.b = data.hotel;
+data.america.a = data.freeze;
+data.hotel.b = data.chicago;
+data.hotel.a = data.alleyway;
+data.chicago.a = data.stockyards;
+data.chicago.b = data.tenement;
+data.tenement.a = data.tuberculosis;
+data.tenement.b = data.newYorkHomeless;
+data.stockyards.b = data.boardinghouse;
+data.stockyards.a = data.wanderChicago;
+data.boardinghouse.b = data.job;
+data.boardinghouse.a = data.houseNoJob;
+data.houseNoJob.b = data.moneyOut;
+data.houseNoJob.a = data.noHouse;
+data.job.a = data.house;
+data.job.b = data.lazybones;
 
-        chicago : {
-            question: "You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want to go to the stockyards?"
-        },
+var place = data.america;
 
-        wandering : {
-            death: "You starve wandering Chicago."
-        },
+var ask = function(){
 
-        stockyards : {
-            question: "You arrive in the stockyards. Coincidencetally, you run into your friend who owns a bodega. He gives a recommendation for a boardinghouse. Do you stay there?"
-        },
+if(place.death === undefined){
+    return place.question;
+} else {
+    console.error (place.death);
+    return "Game Over";
+}
+    
+};
 
-        streets : {
-            death:  "You quickly realize that the whole family cannot sleep in the streets. You find a tenement building to stay in for very little money, but it is very small and cramped. You get sick, because of the cramped consitions, and the disease is fatal."
-        },
+console.log( ask() );
 
-        boardinghouse : {
-            question: "More questions to come..."
-        }
-    };
+var a = function(){
+  place = place.a;
+  return ask();  
+};
 
-    data.lithuania.yes   = data.america;
-    data.lithuania.no    = data.freeze;
-    data.america.yes     = data.hotel;
-    data.america.no      = data.alleyway;
-    data.hotel.yes       = data.chicago;
-    data.hotel.no        = data.newyork;
-    data.newyork.yes     = data.tuberculosis;
-    data.newyork.no      = data.homeless;
-    data.chicago.yes     = data.stockyards;
-    data.chicago.no      = data.wandering;
-    data.stockyards.yes  = data.boardinghouse;
-    data.stockyards.no   = data.streets;
-
-    var getMessage = function() {
-        if (place.question) {
-            return place.question;
-        } else {
-            console.error(place.death);
-            return "Game Over";
-        }
-    };
-
-    // assign global variables
-    window.yes = function(){
-        place = place.yes;
-        return getMessage();
-    };
-
-    window.no = function(){
-        place = place.no;
-        return getMessage();
-    };
-
-    // start game
-    var place = data.lithuania;
-    console.log( getMessage() );
-
-})();
+var b = function(){
+    place = place.b;
+    return ask();
+};
