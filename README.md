@@ -7,4 +7,6 @@ Questions that previously required simple "yes or no" responses now require the 
 
 For instance, the user is now asked, "Do you a) stay in Lithuania, or b) go to America?"
 
-If the user types a(), "You freeze to death because of Lithuania's cold climate."
+If the user types a(), "You freeze to death because of Lithuania's cold climate."  
+
+[Play the game](http://jsbin.com/goyave/edit?console)
